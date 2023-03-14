@@ -1211,3 +1211,34 @@ const data = [
  * 
  */
 
+// pippo = [1,2,3,4,5]
+// pippo[2]
+// { name: '' }
+
+for (let i = 0; i < data.length; i++) {
+  // i = 0; 0 < 20 ?? si
+  // i = 1; 1 < 20 ?? si
+  // i = 20; 20 < 20 ?? no
+  if (i > 10) {
+    console.log(data[i])
+  }
+}
+// soluzione con il filter
+// data = [ {}, {} ]
+console.log( data.filter( (p, index ) => index > 10 ) )_
+
+
+const prodotti_id_20 = data.find(data => data.id === 20) // ok
+console.log(prodotti_id_20.id)
+
+// 3)
+const data_new = data.map( data => { return { id: data.id, title: data.title }  })
+console.log( data_new )
+
+// 4
+const primo = data[0];
+for(let i = 1; i < data.length ; i++)
+  data[i - 1] = data [i];
+
+const new_data = data.shift() // ok
+console.log(new_data)
